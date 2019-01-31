@@ -25,10 +25,6 @@ npm install
 npm start
 ```
 
-## Screenshot
-![](dashboard.jpg)
-
-
 ## Author
 
 * **Paul Braganza** - *Initial work* - [Work](https://github.com/paulbraganza12/)
