@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    
+
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+
+    <!--Fonts Open Sans-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSD7msrusdLms6UrcjgTNAl6JcFWV2fhE"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+
+    <!-- Include Required Prerequisites -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    
+    <!-- Include Date Range Picker -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+   
+    <script type="text/javascript">
+      $(document).ready(function(){
+     $('.parentGraph2').hide();
+     $('.bar-btn').click(function(){
+         $('.parentGraph1').hide();
+         $('.parentGraph2').show();
+     });
+     $('.line-btn').click(function(){
+         $('.parentGraph1').show();
+         $('.parentGraph2').hide();
+     });
+      });
+     </script>
+
+
+    <script type="text/javascript">
+      $(function() {
+          $('input[name="daterange"]').daterangepicker({
+              timePicker: true,
+              timePickerIncrement: 1,
+              locale: {
+                  format: 'MM/DD/YYYY h:mm A'
+              }
+          });
+          $("#CheckAll").click(function(){
+        $('input:checkbox').not(this).prop('checked', this.checked);
+      });
+      $('input[type="checkbox"]').click(function(){
+            if($(this).is(":checked")){
+              $('.ch').prop('checked', false)
+            }
+            else if($(this).is(":not(:checked)")){
+              $('.ch').prop('checked', true)
+            }
+        });
+        });
+         
+      </script>
+
+      <script>
+      $(document).ready(function(){
+      
+      $('.AssetDataDiv').on('scroll', function() {
+      $('thead', this).css('transform', 'translateY('+ this.scrollTop +'px)');
+     
+    });
+    getPagination('#table-id');
+  })
+
+    function getPagination (table){
+      //handle packet loss
+        
+        //pagination
+        $('#maxRows').on('change',function(){
+        $('.page').html(''); 
+        var trnum = 0 ;         
+        var maxRows = parseInt($(this).val());    
+        var totalRows = $('#table-id').find('tr').length;  
+        if(maxRows==0)
+        {
+          maxRows=totalRows;
+        } 
+
+       $(table+' tr:gt(0)').each(function(){    
+          trnum++;            
+          if (trnum > maxRows ){        
+            $(this).hide();   
+          }if (trnum <= maxRows ){
+    
+          $(this).show();}
+       });
+
+       if (totalRows > maxRows){    
+          var pagenum = Math.ceil(totalRows/maxRows); 
+          for (var i = 1; i <= pagenum ;){     
+          $('.page').append('<li onChange={this.setprev} class="page-item" data-page="'+i+'">\
+                        <a class="page-link">'+ i++ +'</a>\
+                      </li>').show();
+          }                    
+      }
+      
+      $('.page li:first-child').addClass('active'); 
+      $('.page li').on('click',function(e){   
+          e.preventDefault();
+          var pageNum = $(this).attr('data-page');  
+          var trIndex = 0 ;             
+          $('.page li').removeClass('active');  
+          $(this).addClass('active');         
+           $(table+' tr:gt(0)').each(function(){   
+            trIndex++;               
+            if (trIndex > (maxRows*pageNum) || trIndex <= ((maxRows*pageNum)-maxRows)){
+                $(this).hide();   
+              }else {$(this).show();}        
+           });                   
+      });                
+    });
+  } 
+
+      </script>
+      
+    <title>React App</title>
+  </head>
+  <body>
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <div id="root"></div>
+   
+  </body>
+</html>

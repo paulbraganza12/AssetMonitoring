@@ -1,0 +1,163 @@
+/*Table Data Main Div float right*/
+.parent
+{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    width:70%;
+    border: .6px;
+    height: 580px;
+    border-style: solid;
+    border-color: darkgrey;
+    box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1) inset;
+    margin: 10px 10px 10px 5px;
+    float:right;
+    position: relative;
+}
+/*Form Division*/
+.formDiv
+{
+    border-style: solid;
+    border-color: #CFD8DC;
+    border-bottom-width: .6px;
+}
+.formCompID
+{
+    display: inline!important;
+    margin: 5px 5px 5px 25px !important;
+    padding: 3px!important;
+}
+.formCompDate
+{
+    margin: 5px 5px 5px 25px !important;
+    padding: 3px!important;
+    font-size: 1rem;
+    line-height: 1.25;
+    color: #464a4c;
+    background-color: #fff;
+    background-image: none;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: .25rem;
+}
+.formCompSearch
+{
+    margin: 5px 5px 10px 25px;
+    padding: 4px!important;
+}
+.formCompDownload
+{
+    margin: 5px 5px 10px 25px;
+    padding: 4px!important;
+}
+/*Asset Info  Division*/
+.AssetInfoDiv
+{
+    border-style: solid;
+    border-color: #CFD8DC;
+    border-bottom-width: .6px;
+    font-size: 13px;
+}
+.AssetInfo1
+{
+    float: left;
+    margin: 4px 5px 4px 30px;
+    padding: 6px;
+}
+.AssetInfo2
+{
+    float: left;
+    margin: 4px 5px 4px 30px;
+    padding: 6px;
+}
+.asset{
+    color: #0288D1 !important;
+}
+
+/*Asset Data Table  Division*/
+.AssetDataDiv
+{
+    width: 100%;
+    overflow:auto;
+	height: 450px;
+	overflow-y: auto;
+}
+
+.DataTable
+{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+td:hover
+{
+    cursor: pointer;
+}
+
+.row_1
+{
+	background-color: #E0F7FA !important;	
+}
+.row1
+{
+	background-color: #FFCCBC !important 
+}
+
+
+.TableFoot
+{
+    font-size: 10px;
+}
+.Filter
+{
+    float: right;
+    padding: 1px;
+    width: 25%;
+    margin-left: 5px;
+}
+.number
+{
+    float: left;
+    padding: 1px;
+    margin-left: 5px!important;
+    margin-right: 5px!important;
+    width: 25%;
+}
+.selectBox
+{
+    margin-top: 5px!important;
+    padding: 1px;
+    font-size: 12px;
+    height: 30px!important;
+    border: 0px!important;
+}
+
+.page li:hover{
+  border-radius: 25%!important;
+  cursor: pointer;
+  background-color: #0288D1!important;
+  color: white!important;
+}
+
+.active
+{
+  border-radius: 25%;
+  cursor: pointer;
+  background-color: #0288D1;
+  color: white;
+}
+
+.paginationl
+{
+    float: left;
+    margin-right: 10px;
+    padding: 1px;
+    margin-top: 5px;
+    position: absolute;
+    left: 120px;
+}
+
+
+  
+
+
